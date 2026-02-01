@@ -1,7 +1,6 @@
 const Listing=require("../models/listing.js");
 
 
-
 module.exports.index=async(req,res)=>{
     const allListing=await Listing.find({})
     res.render("listings/index.ejs",{allListing});
@@ -30,6 +29,8 @@ module.exports.showListing=async(req,res)=>{
             res.redirect("/listings");
         }
         res.render("listings/show",{listing});
+
+        
         
     };
 
@@ -65,7 +66,7 @@ module.exports.renderEditForm=async(req,res)=>{
         };
         let originalImageUrl=listing.image.url;
         originalImageUrl=originalImageUrl.replace("/upload","upload/w_250");
-        res.render("listings/edit.ejs",{listing,originalImageUrl});
+        res.render("listings/edit.ejs", { listing, originalImageUrl});
     };
 
 

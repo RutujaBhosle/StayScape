@@ -62,6 +62,11 @@ router
     wrapAsync(listingController.renderEditForm));
 
 
+//cut
+router.get('/:id', async (req, res) => {
+  const listing = await Listing.findById(req.params.id);
+  res.render('listings/show', { listing });
+});
 
 
 

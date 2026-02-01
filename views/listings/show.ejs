@@ -72,9 +72,11 @@
         <% } %>
         <hr>
        
-        <p> <b> All Reviews</b></p> 
-    
-        <div class="row offset-2"> </div>
+        
+        
+        <p> <b> All Reviews</b></p>
+        <div class="row offset-2"></div>
+         
         <% for(review of listing.reviews){ %>
             <div class="card col-5 ms-3 mb-3">
                 <div class="card-body"> 
@@ -86,9 +88,38 @@
                     <button class="btn btn-sm btn-dark">delete</button>
                 </form>
             </div>
-            <% } %>
         </div>
+        
+        <% } %>
     </div>
-    </div>
+</div>  
+
+
+
+
+
+
+<div class="col-8 offset-2 mb-3">
+
+  <h2>Where you'll be</h2>
+  <div
+    id="map"
+    data-location="<%= listing.location %>"
+  ></div>
+
+</div>
+
+
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Your map file -->
+<script src="/js/map.js"></script>
+
+
+
+
+
 </body>
  
