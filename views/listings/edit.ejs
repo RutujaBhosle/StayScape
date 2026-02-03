@@ -1,82 +1,57 @@
 <% layout("/layouts/boilerplate") %>
-<body>
 
-  <h2>edit a listings</h2>
-  <form method="post"
-    action="/listings/<%=listing._id%>?_method=PUT" novalidate 
-    class="needs-validation"
-    enctype="multipart/form-data"
-  >
-    <div class="row"> 
-      <div class="col-8 offset-2"> 
-      <div class="mb-3"> 
-      <label for="title" class="form-label">title</label>  
-      <input 
-        name="listing[title]"
-        value="<%=listing.title %>"
-        type="text" 
-        class="form-control" required>
-      </div>
+  <body>
 
-    <div class="mb-3"> 
-      <label for="description" class="form-label">description</label>
-      <textarea 
-      name="listing[description]" 
-      value="<%=listing.description %>"
-      type="text" 
-      class="form-control" required></textarea>
-      </div>
+    <h2>edit a listings</h2>
+    <form method="post" action="/listings/<%=listing._id%>?_method=PUT" novalidate class="needs-validation"
+      enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-8 offset-2">
+          <div class="mb-3">
+            <label for="title" class="form-label">title</label>
+            <input name="listing[title]" value="<%=listing.title %>" type="text" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">description</label>
+            <textarea name="listing[description]" value="<%=listing.description %>" type="text" class="form-control"
+              required></textarea>
+          </div>
 
 
-    <div class="mb-3">original listing image
-      <img src="<%=originalImageUrl%>" >
-      </div>
+          <div class="mb-3">original listing image
+            <img src="<%=originalImageUrl%>">
+          </div>
 
-    <div class="mb-3">
-      <label for="image" class="form-label">upload new image</label>
-      <input 
-      name="listing[image]" 
-      alt="Listing image"
-      type="file" 
-      class="form-control" >
-    </div>
+          <div class="mb-3">
+            <label for="image" class="form-label">upload new image</label>
+            <input name="listing[image]" alt="Listing image" type="file" class="form-control">
+          </div>
 
-         
-    <div class="row"> 
-      <div class="mb-3  col-md-4"  >
-      <label for="price" class="form-label">price</label>
-      <input
-        name="listing[price]"
-        value="<%=listing.price %>" 
-        type="number" 
-        class="form-control" required>
-      </div>
 
-    <div class="mb-3 col-md-8">
-      <label for="country" class="form-label">country</label>
-      <input 
-        name="listing[country]"
-        value="<%=listing.country %>"
-        type="text"
-        class="form-control" required>
-      <div class="invalid-feedback">country name should be valid</div>
+          <div class="row">
+            <div class="mb-3  col-md-4">
+              <label for="price" class="form-label">price</label>
+              <input name="listing[price]" value="<%=listing.price %>" type="number" class="form-control" required>
+            </div>
 
-    </div>
-    <br><br>
-    </div>
+            <div class="mb-3 col-md-8">
+              <label for="country" class="form-label">country</label>
+              <input name="listing[country]" value="<%=listing.country %>" type="text" class="form-control" required>
+              <div class="invalid-feedback">country name should be valid</div>
 
-          
-    <div class="mb-3">
-      <label for="location" class="form-label">location</label>
-        <input
-        name="listing[location]"
-        value="<%=listing.location %>"
-        type="text" 
-        class="form-control" required>
+            </div>
+            <br><br>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="location" class="form-label">location</label>
+            <input name="listing[location]" value="<%=listing.location %>" type="text" class="form-control" required>
+          </div>
+
+          <button class="btn btn-dark edit-btn mt-3">edit</button>
         </div>
-      
-        <button class="btn btn-dark edit-btn mt-3">edit</button>
-     </div>
-    </div>
-  </form>
-</body>
+      </div>
+    </form>
+  </body>
